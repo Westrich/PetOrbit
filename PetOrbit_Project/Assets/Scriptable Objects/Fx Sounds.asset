@@ -12,8 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e0953fbf8c70014b8f6761367324cb0, type: 3}
   m_Name: Fx Sounds
   m_EditorClassIdentifier: Assembly-CSharp::SoundList
-  audioClips:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  audioClips: []

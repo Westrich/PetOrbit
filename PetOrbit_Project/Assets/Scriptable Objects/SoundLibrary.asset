@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 864e5f15dc379c04483d5a975c041f69, type: 3}
   m_Name: SoundLibrary
   m_EditorClassIdentifier: Assembly-CSharp::SoundLibrary
-  Soundlists:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  SoundLists:
+  - {fileID: 11400000, guid: 150db5d4b601de8438518cb04803a2bf, type: 2}
+  - {fileID: 11400000, guid: f4a6eb00e2743024faa63b3fa344eae4, type: 2}
+  - {fileID: 11400000, guid: 6d36c9aaf88f9dd42b84b81aa7fd21b4, type: 2}

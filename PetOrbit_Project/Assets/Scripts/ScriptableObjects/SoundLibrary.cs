@@ -5,5 +5,5 @@ using UnityEngine;
 [System.Serializable]
 public class SoundLibrary : ScriptableObject
 {
-    public List<ScriptableObject> Soundlists =new List<ScriptableObject>() ;
+    public List<ScriptableObject> SoundLists =new List<ScriptableObject>() ;
 }
