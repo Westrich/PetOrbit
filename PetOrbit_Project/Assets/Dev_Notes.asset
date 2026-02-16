@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 957b2321592513a41a2c42240977d053, type: 3}
+  m_Name: Dev_Notes
+  m_EditorClassIdentifier: Assembly-CSharp::Notes_SO
+  devNotes:
+  - I wanna Add Camera movement to snap to the pet you select in the adoptoon center
+  - I dont know yet if the player should walk around in the game or not, or if they
+    should even have a character.
+  - For the spawning in adoption center, make a list of positions the pets get spawned
+    at So ne need to hard code it like rn
+  - Dont check for if the pet is selected but rather do it on  the kennel, that way
+    the kennel can control its light and the pets actions
+  - 
