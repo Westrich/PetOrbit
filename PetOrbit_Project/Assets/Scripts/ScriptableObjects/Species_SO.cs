@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Species", menuName = "Scriptable Objects/Species")]
-public class Species : ScriptableObject
+public class Species_SO : ScriptableObject
 {
     public GameObject modelPrefab;
 
