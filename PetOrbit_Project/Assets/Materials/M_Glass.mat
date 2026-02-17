@@ -39,7 +39,7 @@ Material:
   - MOTIONVECTORS
   - DepthOnly
   - SHADOWCASTER
-  m_LockedProperties: _Pos _Scale _StreekSize
+  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -102,7 +102,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _AddPrecomputedVelocity: 0
-    - _Alpha: 0.005
+    - _Alpha: 0.012
     - _AlphaClip: 0
     - _AlphaToMask: 0
     - _Blend: 0
@@ -112,7 +112,7 @@ Material:
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
     - _Con: 1
-    - _Contrast: 0.71
+    - _Contrast: 0.62
     - _Cull: 2
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
@@ -128,7 +128,7 @@ Material:
     - _OcclusionStrength: 1
     - _Parallax: 0.005
     - _Pos: 0.43
-    - _Position: 0.7
+    - _Position: 0.64
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1

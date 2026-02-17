@@ -143,7 +143,7 @@ public class PetGenerator : MonoBehaviour
       private void GenerateColors()
       {
          
-         colors[1] = new Color(RandomRGBvalue(0,2), RandomRGBvalue(0,1), RandomRGBvalue(0,2));
+         colors[1] = new Color(RandomRGBvalue(0,.8f), RandomRGBvalue(0,0.5f), RandomRGBvalue(0,.8f));
          //colors[0] = new Color(RandomRGBvalue(), RandomRGBvalue(), RandomRGBvalue());
          colors[0] = new Color(colors[1].r*RandomRGBvalue(.5f,2f),colors[1].g*RandomRGBvalue(.5f,1f), colors[1].b*RandomRGBvalue(.5f,2f));
          colors[2] = new Color(0, 0, 0);
