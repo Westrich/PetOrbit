@@ -49,7 +49,7 @@ public class PetGenerator : MonoBehaviour
       }
       if (Input.GetKeyDown(KeyCode.R))
       {
-         Debug.Log("pushin R");
+        //Debug.Log("pushin R");
          foreach (var byepet in _allPets)
          {
             Destroy(byepet.gameObject);
@@ -84,7 +84,7 @@ public class PetGenerator : MonoBehaviour
             
          }
          PetsSpawned += 1;
-         Debug.Log("SpawnPet Called");
+         //Debug.Log("SpawnPet Called");
          MakePet(pet);
          SetMaterial(pet);
          Place(SpawnPosition,rotation);
@@ -104,7 +104,7 @@ public class PetGenerator : MonoBehaviour
       _pet.petData = InstancePetData();
       _allPets.Add(_pet);
       MakeMesh(pet);
-      Debug.Log("pet data chosen from "+_pet.petData);
+      //Debug.Log("pet data chosen from "+_pet.petData);
    }
    
    private void SetMaterial(GameObject pet)
@@ -143,9 +143,9 @@ public class PetGenerator : MonoBehaviour
       private void GenerateColors()
       {
          
-         colors[1] = new Color(RandomRGBvalue(0,2), RandomRGBvalue(0,2), RandomRGBvalue(0,2));
+         colors[1] = new Color(RandomRGBvalue(0,2), RandomRGBvalue(0,1), RandomRGBvalue(0,2));
          //colors[0] = new Color(RandomRGBvalue(), RandomRGBvalue(), RandomRGBvalue());
-         colors[0] = new Color(colors[1].r*RandomRGBvalue(.5f,2f),colors[1].g*RandomRGBvalue(.5f,2f), colors[1].b*RandomRGBvalue(.5f,2f));
+         colors[0] = new Color(colors[1].r*RandomRGBvalue(.5f,2f),colors[1].g*RandomRGBvalue(.5f,1f), colors[1].b*RandomRGBvalue(.5f,2f));
          colors[2] = new Color(0, 0, 0);
 
       }

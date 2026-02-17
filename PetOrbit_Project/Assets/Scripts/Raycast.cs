@@ -14,7 +14,12 @@ public class Raycast : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        DrawRay();
+        if (Input.GetMouseButtonDown(0))
+        {
+            Debug.Log("clicked mouse");
+            OnMouseClick();
+        }
     }
 
     private void OnMouseClick()

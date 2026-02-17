@@ -9,7 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6139553591374719014}
-  m_Layer: 0
+  - component: {fileID: 6494093579789832701}
+  m_Layer: 6
   m_Name: P_Dog
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32,6 +33,27 @@ Transform:
   - {fileID: 8245971347147393080}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &6494093579789832701
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2808255599980794668}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.3, y: 0.53, z: 0.3}
+  m_Center: {x: 0, y: 0.16, z: 0}
 --- !u!1001 &8495242714398879699
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -104,10 +126,22 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: a7fe6b6cd8ebe3041a9259633919cb98, type: 2}
+    - target: {fileID: -7146521406498821007, guid: 4f7b7b82f50e8654d9830acdce462847, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: -6959539742096114982, guid: 4f7b7b82f50e8654d9830acdce462847, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: a7fe6b6cd8ebe3041a9259633919cb98, type: 2}
+    - target: {fileID: -4684826049721754726, guid: 4f7b7b82f50e8654d9830acdce462847, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -933720817234129711, guid: 4f7b7b82f50e8654d9830acdce462847, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: -804731622281664130, guid: 4f7b7b82f50e8654d9830acdce462847, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -120,6 +154,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dog_Placeholder
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4f7b7b82f50e8654d9830acdce462847, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2200659609026050577, guid: 4f7b7b82f50e8654d9830acdce462847, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4149880648067611481, guid: 4f7b7b82f50e8654d9830acdce462847, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -128,6 +170,18 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: a7fe6b6cd8ebe3041a9259633919cb98, type: 2}
+    - target: {fileID: 6638712811000160258, guid: 4f7b7b82f50e8654d9830acdce462847, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7207271452908447755, guid: 4f7b7b82f50e8654d9830acdce462847, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8330938450325433214, guid: 4f7b7b82f50e8654d9830acdce462847, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: To_Do
   m_EditorClassIdentifier: Assembly-CSharp::Notes_SO
   devNotes:
-  - Spawn Pet In Box
-  - Rycast Hit Pet
-  - Safe Selected Pet
+  - Spawn Pet In Box DONE
+  - Rycast Hit Pet DONE
   - UI to ask confirmation of coice
+  - Safe Selected Pet
   - Change Scene
   - Second Home Scene, Which spawns the safed Pet
-  - Camera Movement on selection
+  - Camera Movement on selection DONE
   - 
