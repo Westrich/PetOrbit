@@ -7,44 +7,21 @@ public class CamMoveTo : MonoBehaviour
 {
     public List<CameraTarget> cratePositions;
 
-    public int currenttarget = 1;
+    public int crateColum = 1;
+    public int crateRow = 0;
     public CinemachineCamera cinemachine;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    
+    public void ChangeCrate(int row, int colum)
     {
+        if (row == 0)
+        {
+            cinemachine.Target = cratePositions[colum];
+        }
+        if (row == 1)
+        {
+            cinemachine.Target = cratePositions[colum+3];
+        }
         
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            ChangeTarget(0);
-        }
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            ChangeTarget(1);
-        }
-    }
-
-    public void ChangeTarget(int input)
-    {
-        if (input == 0)
-        {
-            if (currenttarget!=0)
-            {
-                currenttarget -= 1;
-                cinemachine.Target = cratePositions[currenttarget];
-            }else return;
-        }else if (input == 1)
-        {
-            if (currenttarget != 2)
-            {
-                currenttarget += 1;
-                cinemachine.Target = cratePositions[currenttarget];
-            }
-            
-        }
+        
     }
 }

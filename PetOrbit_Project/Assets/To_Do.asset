@@ -13,11 +13,14 @@ MonoBehaviour:
   m_Name: To_Do
   m_EditorClassIdentifier: Assembly-CSharp::Notes_SO
   devNotes:
+  - Make Color Combinations to be picked from
   - Spawn Pet In Box DONE
   - Rycast Hit Pet DONE
   - UI to ask confirmation of coice
+  - Give Pet a name
   - Safe Selected Pet
-  - Change Scene
+  - Light Stronger When Crate is selected
+  - Change Scene DONE
   - Second Home Scene, Which spawns the safed Pet
   - Camera Movement on selection DONE
   - 

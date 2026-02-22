@@ -1,0 +1,11 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/MainMenuStyle.uss?fileID=7433441132597879392&amp;guid=488b432d624a29043ac59be2d2a0c494&amp;type=3#MainMenuStyle"/>
+    <ui:VisualElement name="Container" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Textures/T_Menue_Placeholder.png?fileID=21300000&amp;guid=24234d768afedf6429dea5f2d651bfd3&amp;type=3#T_Menue_Placeholder&quot;);">
+        <ui:Label text="Main Menu" name="Header" class="header" style="align-self: flex-start;"/>
+        <ui:VisualElement name="ButtonContainer" style="flex-grow: 1; align-items: center; flex-direction: column; justify-content: center; width: auto; height: auto; min-width: 0%; min-height: 0%; max-width: 100%; max-height: 100%; align-content: center; top: auto;">
+            <ui:Button text="Start" name="StartButton" emoji-fallback-support="false" enable-rich-text="false" class="button"/>
+            <ui:Button text="Settings" name="SettingsButton" emoji-fallback-support="false" enable-rich-text="false" class="button"/>
+            <ui:Button text="Quit" name="QuitButton" class="button" style="background-color: rgb(242, 204, 250); border-top-color: rgba(207, 157, 212, 0.56); border-left-color: rgba(207, 157, 212, 0.56); border-right-color: rgba(207, 157, 212, 0.56); border-bottom-color: rgba(207, 157, 212, 0.56); color: rgb(185, 135, 190);"/>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

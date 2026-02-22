@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Dev_Notes
   m_EditorClassIdentifier: Assembly-CSharp::Notes_SO
   devNotes:
-  - I wanna Add Camera movement to snap to the pet you select in the adoptoon center
-    (DONE)
   - I dont know yet if the player should walk around in the game or not, or if they
     should even have a character.
   - For the spawning in adoption center, make a list of positions the pets get spawned
     at So ne need to hard code it like rn
   - Dont check for if the pet is selected but rather do it on  the kennel, that way
     the kennel can control its light and the pets actions
+  - I wanna Add Camera movement to snap to the pet you select in the adoptoon center
+    (DONE)
   - 
