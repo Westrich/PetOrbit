@@ -5,22 +5,38 @@ using UnityEngine;
 using UnityEngine.Rendering.UI;
 using UnityEngine.UIElements;
 using Random = UnityEngine.Random;
+using System;
 
 public class PetSpawner : MonoBehaviour
 {
     [SerializeField] private List<Pet_SO> possiblePet = new List<Pet_SO>();
-    [SerializeField] private List<Color_SO> possibleColorCombos = new List<Color_SO>();
+    [SerializeField] private List<ColorData> possibleColorCombos = new List<ColorData>();
+    [SerializeField] private ColorList colorList;
     [SerializeField] private GameObject petPrefab;
     [SerializeField] private List<Pet> generatedPets = new List<Pet>();
     [SerializeField] private Pet latestPet;
-    [SerializeField] private Color_SO currentColor;
+    [SerializeField] private ColorData currentColor;
     [SerializeField] private List<Vector3> spawnPositions = new List<Vector3>();
+    [SerializeField] private List<Crate> crates;
     [SerializeField] private bool maxPetsSpawned= false;
+    [SerializeField] private CrateManager _crateManager;
    
 
     private void Awake()
     {
-        
+        crates = _crateManager.GetCrates();
+        possibleColorCombos = colorList.colorLists;
+    }
+
+    private void OnValidate()
+    {
+        if (possibleColorCombos.Count==0&&colorList)
+        {
+            foreach (var colorData in colorList.colorLists)
+            {
+                possibleColorCombos.Add(colorData);
+            }
+        }
     }
 
     public void SpawnMultiplePets(int amount)
@@ -33,8 +49,13 @@ public class PetSpawner : MonoBehaviour
         PopulatePositions(amount);
         for (int i = 0; i < amount; i++)
         {
+            
             Debug.Log(i);
-            SpawnPet(spawnPositions[i]);
+            
+            SpawnPet(crates[i].transform.position);
+            crates[i].SetPet(latestPet);
+            _crateManager.petInCurrentCrate = latestPet.gameObject;
+            _crateManager.nameOfPet = latestPet.petData.GetName();
         }
 
         foreach (var pet in generatedPets)
@@ -81,7 +102,7 @@ public class PetSpawner : MonoBehaviour
 
     private void PickColor()
     {
-        Color_SO colorCombo;
+        ColorData colorCombo;
         int index;
         index = Random.Range(0,possibleColorCombos.Count);
         colorCombo = possibleColorCombos[index];

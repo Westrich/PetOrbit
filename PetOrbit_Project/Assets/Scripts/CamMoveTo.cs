@@ -10,15 +10,18 @@ public class CamMoveTo : MonoBehaviour
     public int crateColum = 1;
     public int crateRow = 0;
     public CinemachineCamera cinemachine;
+    public CrateManager cManager;
     
     public void ChangeCrate(int row, int colum)
     {
         if (row == 0)
         {
+            cManager.FocusOnCrate(colum);
             cinemachine.Target = cratePositions[colum];
         }
         if (row == 1)
         {
+            cManager.FocusOnCrate(colum+3);
             cinemachine.Target = cratePositions[colum+3];
         }
         

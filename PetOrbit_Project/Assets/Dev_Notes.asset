@@ -16,9 +16,14 @@ MonoBehaviour:
   - I dont know yet if the player should walk around in the game or not, or if they
     should even have a character.
   - For the spawning in adoption center, make a list of positions the pets get spawned
-    at So ne need to hard code it like rn
+    at So ne need to hard code it like rn (DONE)
   - Dont check for if the pet is selected but rather do it on  the kennel, that way
-    the kennel can control its light and the pets actions
+    the kennel can control its light and the pets actions (DONE) (cratemanager stores
+    wich crate is selescted and wich pet in in there)
   - I wanna Add Camera movement to snap to the pet you select in the adoptoon center
     (DONE)
+  - 'I wanna make sure that one of each pet will be spawned for sure, but do that
+    later
+
+'
   - 
