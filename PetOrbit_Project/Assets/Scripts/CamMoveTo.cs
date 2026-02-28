@@ -6,25 +6,28 @@ using UnityEngine;
 public class CamMoveTo : MonoBehaviour
 {
     public List<CameraTarget> cratePositions;
-
-    public int crateColum = 1;
-    public int crateRow = 0;
     public CinemachineCamera cinemachine;
-    public CrateManager cManager;
+    public int TargetIndex=0;
     
-    /*public void ChangeCrate(int row, int colum)
+    public void NextCrate()
     {
-        if (row == 0)
+        if (TargetIndex!= cratePositions.Count-1)
         {
-            cManager.FocusOnCrate(colum);
-            cinemachine.Target = cratePositions[colum];
+            TargetIndex += 1;
         }
-        if (row == 1)
+        else TargetIndex = 0;
+       
+        cinemachine.Target = cratePositions[TargetIndex];
+
+    }
+
+    public void PreviousCrate()
+    {
+        if (TargetIndex != 0)
         {
-            cManager.FocusOnCrate(colum+3);
-            cinemachine.Target = cratePositions[colum+3];
+            TargetIndex -= 1;
         }
-        
-        
-    }*/
+        else TargetIndex = cratePositions.Count - 1;
+        cinemachine.Target = cratePositions[TargetIndex];
+    }
 }

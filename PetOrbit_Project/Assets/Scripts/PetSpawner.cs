@@ -58,54 +58,7 @@ public class PetSpawner : MonoBehaviour
         AssignCrates();
     }
 
-    /*public void SpawnMultiplePets(int amount)
-    {
-        amount = spawnamount;
-        if (maxPetsSpawned)
-        {
-            Debug.Log("maximum amount of pets spawned");
-            return;
-        }
-        PopulatePositions(amount);
-        for (int i = 0; i < amount; i++)
-        {
-
-            Debug.Log(i);
-
-            SpawnPet(crates[i].transform.position);
-            crates[i].SetPet(latestPet);
-            _crateManager.petInCurrentCrate = latestPet.gameObject;
-            _crateManager.nameOfPet = latestPet.petData.GetName();
-        }
-
-        foreach (var pet in generatedPets)
-        {
-            Debug.Log(pet.petData.GetName());
-        }
-
-        maxPetsSpawned = true;
-    }
-
-    private void SpawnPet(Vector3 position)
-    {
-        Debug.Log(position.x);
-        CreatePet();
-        PickColor();
-        SetColor();
-        Place(position, Quaternion.Euler(0,0,0));
-    }
-
-    public void ResetPets()
-    {
-        foreach (var byepet in generatedPets)
-        {
-            Destroy(byepet.gameObject);
-        }
-        spawnPositions.Clear();
-        generatedPets.Clear();
-        maxPetsSpawned = false;
-    }
-
+    /*
     private void SetColor()
     {
         MeshRenderer[] renderers = latestPet.GetComponentsInChildren<MeshRenderer>();
@@ -129,76 +82,7 @@ public class PetSpawner : MonoBehaviour
         currentColor = colorCombo;
     }
 
-    private void PopulatePositions(int amount)
-    {
-        Debug.Log("Populateposition funtion enter");
-        float row = 0;
-        int colum = 0;
-        for (int i = 0; i < amount; i++)
-        {
-            if (i % 2 == 0)
-            {
-                row = 1.055f;
-            }
-            else
-            {
-                row = 0;
-            }
-
-            if (i < amount/2)
-            {
-                colum = i;
-            }
-            else
-            {
-                colum = i - amount / 2;
-            }
-            spawnPositions.Add(new Vector3(ColumToPos(colum),row+0.125f,1.5f));
-           Debug.Log("Colum Position " + ColumToPos(colum) + "row position" + row);
-
-        }
-        Debug.Log("Populateposition funtion exit");
-    }
-
-    private float ColumToPos(int colum)
-    {
-        return colum - 0.5f;
-    }
-    private void Place(Vector3 position, Quaternion rotation)
-    {
-        latestPet.transform.position = position;
-        latestPet.transform.rotation = rotation;
-    }
-
-    private void CreatePet()
-    {
-        var pet = Instantiate(petPrefab).GetComponent<Pet>().CreatePet(SelectRandomPet());
-        generatedPets.Add(pet);
-        latestPet = pet;
-
-        //instantiate mesh
-
-    }
-
-    private PetData SelectRandomPet()
-    {
-        if (possiblePet == null)
-        {
-            Debug.Log("List of possible pets is null");
-            return null;
-        }
-        if (possiblePet.Count==0)
-        {
-            Debug.Log("List of possible pets is empty");
-            throw new NotImplementedException();
-        }
-        else
-        {
-            Debug.Log(possiblePet.Count);
-            int value;
-            value = Random.Range(0,possiblePet.Count);
-            return possiblePet[value];
-        }
+  
 
     }*/
 }
