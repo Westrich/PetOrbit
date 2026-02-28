@@ -36,7 +36,7 @@ public class UserInput : MonoBehaviour
             else if (keyboard.rKey.wasPressedThisFrame)
             {
                // Debug.Log("pressed r");
-                spawner.ResetPets();
+                //spawner.ResetPets();
                
             }
             else if (keyboard.wKey.wasPressedThisFrame)

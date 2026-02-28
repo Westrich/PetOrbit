@@ -1,16 +1,12 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Pet_SO", menuName = "Scriptable Objects/Pet_SO")]
-public class Pet_SO : ScriptableObject
+public class PetData : ScriptableObject
 {
 
-    [SerializeField] private Species_SO SpeciesSo;
+    [SerializeField] private Species_SO speciesSo;
     [SerializeField] private string petName = "no name assigned";
-
-    public Species_SO GetSpecies()
-    {
-        return SpeciesSo;
-    }
+    public Species_SO SpeciesSo => speciesSo;
 
     public string GetName()
     {

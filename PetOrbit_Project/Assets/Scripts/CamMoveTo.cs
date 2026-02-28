@@ -12,7 +12,7 @@ public class CamMoveTo : MonoBehaviour
     public CinemachineCamera cinemachine;
     public CrateManager cManager;
     
-    public void ChangeCrate(int row, int colum)
+    /*public void ChangeCrate(int row, int colum)
     {
         if (row == 0)
         {
@@ -26,5 +26,5 @@ public class CamMoveTo : MonoBehaviour
         }
         
         
-    }
+    }*/
 }

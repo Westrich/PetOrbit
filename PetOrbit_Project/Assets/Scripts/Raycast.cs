@@ -41,7 +41,7 @@ public class Raycast : MonoBehaviour
         {
             if (hit.transform.TryGetComponent<Pet>( out Pet pet))
             {
-                Debug.Log(pet.petData.GetName());
+                Debug.Log(pet.PetData.GetName());
             }else Debug.Log(hit.transform.name);
         }
     }

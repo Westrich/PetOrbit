@@ -23,7 +23,7 @@ public class CrateManager : MonoBehaviour
         return allCrates;
     }
 
-    public void FocusOnCrate(int index)
+    /*public void FocusOnCrate(int index)
     {
         Debug.Log("focusing on"+allCrates[index]);
         if (currentCrate != null)
@@ -38,20 +38,20 @@ public class CrateManager : MonoBehaviour
             nameOfPet = petInCurrentCrate.GetComponent<Pet>().petData.GetName();
         }
         currentCrate.BrightenLight();
-    }
+    }*/
 
-    public void ClearCrates()
+    /*public void ClearCrates()
     {
         foreach (var crate in allCrates)
         {
             crate.SetPet(null);
         }
-    }
+    }*/
     
-    public void FillCrate(Crate crate, Pet pet)
+    /*public void FillCrate(Crate crate, Pet pet)
     {
         crate.SetPet(pet);
-    }
+    }*/
 
     
 }

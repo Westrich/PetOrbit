@@ -9,10 +9,14 @@ using System;
 
 public class PetSpawner : MonoBehaviour
 {
-    [SerializeField] private List<Pet_SO> possiblePet = new List<Pet_SO>();
+    
+    public List<Crate> crates;
+    [SerializeField] private List<PetData> possiblePets = new List<PetData>();
     [SerializeField] private List<ColorData> possibleColorCombos = new List<ColorData>();
     [SerializeField] private ColorList colorList;
     [SerializeField] private GameObject petPrefab;
+    public GameObject PetPrefab => petPrefab;
+    /*[SerializeField] private GameObject petPrefab;
     [SerializeField] private List<Pet> generatedPets = new List<Pet>();
     [SerializeField] private Pet latestPet;
     [SerializeField] private ColorData currentColor;
@@ -20,12 +24,14 @@ public class PetSpawner : MonoBehaviour
     [SerializeField] private List<Crate> crates;
     [SerializeField] private bool maxPetsSpawned= false;
     [SerializeField] private CrateManager _crateManager;
-    public int spawnamount = 1;
+    public int spawnamount = 1;*/
+    
+    public static PetSpawner Instance {get; private set;}
 
     private void Awake()
     {
-        crates = _crateManager.GetCrates();
-        possibleColorCombos = colorList.colorLists;
+        if(Instance != null) Destroy(gameObject);
+        else Instance = this;
     }
 
     private void OnValidate()
@@ -39,7 +45,20 @@ public class PetSpawner : MonoBehaviour
         }
     }
 
+    private void AssignCrates()
+    {
+        foreach (var crate in crates)
+        {
+            crate.SetPet(possiblePets[Random.Range(0, possiblePets.Count)]);
+        }
+    }
+
     public void SpawnMultiplePets(int amount)
+    {
+        AssignCrates();
+    }
+
+    /*public void SpawnMultiplePets(int amount)
     {
         amount = spawnamount;
         if (maxPetsSpawned)
@@ -50,9 +69,9 @@ public class PetSpawner : MonoBehaviour
         PopulatePositions(amount);
         for (int i = 0; i < amount; i++)
         {
-            
+
             Debug.Log(i);
-            
+
             SpawnPet(crates[i].transform.position);
             crates[i].SetPet(latestPet);
             _crateManager.petInCurrentCrate = latestPet.gameObject;
@@ -109,7 +128,7 @@ public class PetSpawner : MonoBehaviour
         colorCombo = possibleColorCombos[index];
         currentColor = colorCombo;
     }
-    
+
     private void PopulatePositions(int amount)
     {
         Debug.Log("Populateposition funtion enter");
@@ -136,7 +155,7 @@ public class PetSpawner : MonoBehaviour
             }
             spawnPositions.Add(new Vector3(ColumToPos(colum),row+0.125f,1.5f));
            Debug.Log("Colum Position " + ColumToPos(colum) + "row position" + row);
-            
+
         }
         Debug.Log("Populateposition funtion exit");
     }
@@ -150,21 +169,18 @@ public class PetSpawner : MonoBehaviour
         latestPet.transform.position = position;
         latestPet.transform.rotation = rotation;
     }
-    
+
     private void CreatePet()
     {
-        var petContainer = Instantiate(petPrefab);
-        var pet = petContainer.GetComponent<Pet>();
-        pet.petData = SelectRandomPet();
+        var pet = Instantiate(petPrefab).GetComponent<Pet>().CreatePet(SelectRandomPet());
         generatedPets.Add(pet);
         latestPet = pet;
-        
+
         //instantiate mesh
-        Instantiate(pet.GetModel(),pet.transform);
 
     }
 
-    private Pet_SO SelectRandomPet()
+    private PetData SelectRandomPet()
     {
         if (possiblePet == null)
         {
@@ -183,6 +199,6 @@ public class PetSpawner : MonoBehaviour
             value = Random.Range(0,possiblePet.Count);
             return possiblePet[value];
         }
-      
-    }
+
+    }*/
 }

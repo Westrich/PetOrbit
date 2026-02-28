@@ -7,7 +7,7 @@ using Random = UnityEngine.Random;
 
 public class PetGeneratorRandomColor : MonoBehaviour
 {
-   [SerializeField] private List<Pet_SO> possiblePet = new List<Pet_SO>();
+   [SerializeField] private List<PetData> possiblePet = new List<PetData>();
    [SerializeField] private GameObject petPrefab;
    [SerializeField] private List<Pet> _allPets = new List<Pet>();
    private Pet _pet;
@@ -61,7 +61,7 @@ public class PetGeneratorRandomColor : MonoBehaviour
       }
    }
 
-   public void SpawnSavedPet(Pet chosenPet, Pet_SO petData)
+   public void SpawnSavedPet(Pet chosenPet, PetData petData)
    {
       
    }
@@ -107,7 +107,7 @@ public class PetGeneratorRandomColor : MonoBehaviour
    {
       pet = Instantiate(petPrefab);
       _pet = pet.GetComponent<Pet>();
-      _pet.petData = InstancePetData();
+      //_pet.PetData = InstancePetData();
       _allPets.Add(_pet);
       GenerateColors();
       MakeMesh(pet);
@@ -122,8 +122,8 @@ public class PetGeneratorRandomColor : MonoBehaviour
      
       foreach (var rend in renderers)
       {
-         rend.material.SetColor("_Color_A", _pet.petData.GetColor("colorA"));
-         rend.material.SetColor("_Color_B",_pet.petData.GetColor("colorB"));
+         rend.material.SetColor("_Color_A", _pet.PetData.GetColor("colorA"));
+         rend.material.SetColor("_Color_B",_pet.PetData.GetColor("colorB"));
          rend.material.SetColor("_Color_C",colors[2]);
       }
 
@@ -139,7 +139,7 @@ public class PetGeneratorRandomColor : MonoBehaviour
       //pet.GetComponentInChildren<MeshRenderer>().material = _pet.GetMaterial();
          
    }
-   private Pet_SO InstancePetData()
+   private PetData InstancePetData()
       {
           
          var petSo = Instantiate(possiblePet[GetRandPetIndex()]);
@@ -164,8 +164,8 @@ public class PetGeneratorRandomColor : MonoBehaviour
          colors[0] = new Color(colors[1].r*RandomRGBvalue(.5f,2f),colors[1].g*RandomRGBvalue(.5f,1f), colors[1].b*RandomRGBvalue(.5f,2f));
          colors[2] = new Color(0, 0, 0);
          
-         _pet.petData.SetColor("colorA",colors[0]);
-         _pet.petData.SetColor("colorB",colors[1]);
+         _pet.PetData.SetColor("colorA",colors[0]);
+         _pet.PetData.SetColor("colorB",colors[1]);
 
       }
       private float RandomRGBvalue(float a, float b)

@@ -5,7 +5,7 @@ public class PetManager : MonoBehaviour
 {
 
     public List<Pet> allPets = new List<Pet>();
-    public List<Pet_SO> allPetData = new List<Pet_SO>();
+    public List<PetData> allPetData = new List<PetData>();
 
     void Start()
     {
@@ -17,13 +17,13 @@ public class PetManager : MonoBehaviour
         
     }
 
-    private void SafePetData(Pet pet, Pet_SO petData)
+    private void SafePetData(Pet pet, PetData petData)
     {
         allPets.Add(pet);
         allPetData.Add(petData);
     }
 
-    private void DeletePet(Pet pet,Pet_SO petData)
+    private void DeletePet(Pet pet,PetData petData)
     {
         allPets.Remove(pet);
         allPetData.Remove(petData);

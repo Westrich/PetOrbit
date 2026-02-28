@@ -3,14 +3,22 @@ using UnityEngine;
 public class Crate : MonoBehaviour
 {
   [SerializeField] private Light light;
-  [SerializeField] private GameObject petInCrate;
+  [SerializeField] private Pet petInCrate;
+  [SerializeField] private Transform petSpawnPoint;
 
-  public void SetPet(Pet pet)
+  public void SetPet(PetData petData)
   {
-    petInCrate = pet.gameObject;
+    if(petInCrate != null) ResetPet();
+    petInCrate = Instantiate(PetSpawner.Instance.PetPrefab, transform).GetComponent<Pet>();
+    petInCrate.CreatePet(petData);
   }
 
-  public GameObject GetPet()
+  private void ResetPet()
+  {
+    Destroy(petInCrate.gameObject);
+  }
+
+  public Pet GetPet()
   {
     return petInCrate;
   }

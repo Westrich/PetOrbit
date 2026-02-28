@@ -44,5 +44,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3db264443fc1094b99d89ed89d6974f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Pet
-  model: {fileID: 0}
-  petData: {fileID: 0}
+  defaultPetData: {fileID: 11400000, guid: 6fc139d33ceb89d4b8c1bbb132a5c3dd, type: 2}
