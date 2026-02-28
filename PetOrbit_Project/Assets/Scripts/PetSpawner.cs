@@ -20,7 +20,7 @@ public class PetSpawner : MonoBehaviour
     [SerializeField] private List<Crate> crates;
     [SerializeField] private bool maxPetsSpawned= false;
     [SerializeField] private CrateManager _crateManager;
-   
+    public int spawnamount = 1;
 
     private void Awake()
     {
@@ -41,6 +41,7 @@ public class PetSpawner : MonoBehaviour
 
     public void SpawnMultiplePets(int amount)
     {
+        amount = spawnamount;
         if (maxPetsSpawned)
         {
             Debug.Log("maximum amount of pets spawned");

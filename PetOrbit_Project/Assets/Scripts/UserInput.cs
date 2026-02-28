@@ -9,6 +9,7 @@ public class UserInput : MonoBehaviour
     public int crateColum = 1;
     public int crateRow = 0;
     
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -58,13 +59,13 @@ public class UserInput : MonoBehaviour
                 //Debug.Log("pressed d");
                 if (crateColum != 2) crateColum += 1;
             }
-
+/*
             if (camControll == null)
             {
                 camControll = Camera.main.GetComponent<CamMoveTo>();
             }
             camControll.ChangeCrate(crateRow,crateColum);
-            
+            */
         }
     }
 
