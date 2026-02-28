@@ -6,10 +6,8 @@ public class UserInput : MonoBehaviour
 {
     public CamMoveTo camControll;
     public PetSpawner spawner;
-    public int crateColum = 1;
-    public int crateRow = 0;
-    
-    
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -33,46 +31,22 @@ public class UserInput : MonoBehaviour
                 spawner.SpawnMultiplePets(6);
                 
             }
-            else if (keyboard.rKey.wasPressedThisFrame)
-            {
-               // Debug.Log("pressed r");
-                //spawner.ResetPets();
-               
-            }
-            else if (keyboard.wKey.wasPressedThisFrame)
-            {
-                //Debug.Log("pressed w");
-                if (crateRow == 0) crateRow = 1;
-            }
-            else if (keyboard.sKey.wasPressedThisFrame)
-            {
-               // Debug.Log("pressed s");
-                if (crateRow == 1) crateRow = 0;
-            }
             else if (keyboard.aKey.wasPressedThisFrame)
             {
                // Debug.Log("pressed a");
-                if (crateColum != 0) crateColum -= 1;
+                camControll.PreviousCrate();
             }
             else if (keyboard.dKey.wasPressedThisFrame)
             {
                 //Debug.Log("pressed d");
-                if (crateColum != 2) crateColum += 1;
+                camControll.NextCrate();
             }
-/*
-            if (camControll == null)
-            {
-                camControll = Camera.main.GetComponent<CamMoveTo>();
-            }
-            camControll.ChangeCrate(crateRow,crateColum);
-            */
+
+           
         }
     }
 
-    private void FixedUpdate()
-    {
-       
-    }
+    
 
    
 }

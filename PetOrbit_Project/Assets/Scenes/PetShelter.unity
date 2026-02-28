@@ -2382,63 +2382,6 @@ MonoBehaviour:
   light: {fileID: 42970521}
   petInCrate: {fileID: 0}
   petSpawnPoint: {fileID: 0}
---- !u!1001 &1200777975
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 352043626490797378, guid: 1252d0f06f7b95a43911c31c61f9fa3d, type: 3}
-      propertyPath: m_Name
-      value: P_Pet
-      objectReference: {fileID: 0}
-    - target: {fileID: 823182845884871843, guid: 1252d0f06f7b95a43911c31c61f9fa3d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.1123369
-      objectReference: {fileID: 0}
-    - target: {fileID: 823182845884871843, guid: 1252d0f06f7b95a43911c31c61f9fa3d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.74516
-      objectReference: {fileID: 0}
-    - target: {fileID: 823182845884871843, guid: 1252d0f06f7b95a43911c31c61f9fa3d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 2.2725747
-      objectReference: {fileID: 0}
-    - target: {fileID: 823182845884871843, guid: 1252d0f06f7b95a43911c31c61f9fa3d, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 823182845884871843, guid: 1252d0f06f7b95a43911c31c61f9fa3d, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 823182845884871843, guid: 1252d0f06f7b95a43911c31c61f9fa3d, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 823182845884871843, guid: 1252d0f06f7b95a43911c31c61f9fa3d, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 823182845884871843, guid: 1252d0f06f7b95a43911c31c61f9fa3d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 823182845884871843, guid: 1252d0f06f7b95a43911c31c61f9fa3d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 823182845884871843, guid: 1252d0f06f7b95a43911c31c61f9fa3d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 1252d0f06f7b95a43911c31c61f9fa3d, type: 3}
 --- !u!1 &1201337191
 GameObject:
   m_ObjectHideFlags: 0
@@ -4357,7 +4300,7 @@ PrefabInstance:
     - target: {fileID: 3439231732865665464, guid: 0b556b627d0951241a46df4ccbbb034a, type: 3}
       propertyPath: 'possiblePets.Array.data[0]'
       value: 
-      objectReference: {fileID: 11400000, guid: 579e8250b6b716847b8df3f900df1365, type: 2}
+      objectReference: {fileID: 11400000, guid: 6fc139d33ceb89d4b8c1bbb132a5c3dd, type: 2}
     - target: {fileID: 3439231732865665464, guid: 0b556b627d0951241a46df4ccbbb034a, type: 3}
       propertyPath: 'possiblePets.Array.data[1]'
       value: 
@@ -4365,7 +4308,7 @@ PrefabInstance:
     - target: {fileID: 3439231732865665464, guid: 0b556b627d0951241a46df4ccbbb034a, type: 3}
       propertyPath: 'possiblePets.Array.data[2]'
       value: 
-      objectReference: {fileID: 11400000, guid: 6fc139d33ceb89d4b8c1bbb132a5c3dd, type: 2}
+      objectReference: {fileID: 11400000, guid: 579e8250b6b716847b8df3f900df1365, type: 2}
     - target: {fileID: 3439231732865665464, guid: 0b556b627d0951241a46df4ccbbb034a, type: 3}
       propertyPath: possibleColorCombos.Array.size
       value: 28
@@ -4528,4 +4471,3 @@ SceneRoots:
   - {fileID: 1319746137933628045}
   - {fileID: 284943830}
   - {fileID: 1916625612}
-  - {fileID: 1200777975}
