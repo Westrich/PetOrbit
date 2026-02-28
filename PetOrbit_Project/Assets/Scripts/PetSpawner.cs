@@ -28,6 +28,7 @@ public class PetSpawner : MonoBehaviour
     
     public static PetSpawner Instance {get; private set;}
 
+    // Create Singleton
     private void Awake()
     {
         if(Instance != null) Destroy(gameObject);
@@ -52,6 +53,7 @@ public class PetSpawner : MonoBehaviour
         {
             crate.SetPet(possiblePets[randomPet]);
             var previousPet = randomPet;
+            // Making sure it is never the same species twice
             while (previousPet == randomPet)
             {
                 randomPet = Random.Range(0, possiblePets.Count);
