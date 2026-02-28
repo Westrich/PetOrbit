@@ -47,9 +47,15 @@ public class PetSpawner : MonoBehaviour
 
     private void AssignCrates()
     {
+        var randomPet =  Random.Range(0, possiblePets.Count);
         foreach (var crate in crates)
         {
-            crate.SetPet(possiblePets[Random.Range(0, possiblePets.Count)]);
+            crate.SetPet(possiblePets[randomPet]);
+            var previousPet = randomPet;
+            while (previousPet == randomPet)
+            {
+                randomPet = Random.Range(0, possiblePets.Count);
+            }
         }
     }
 

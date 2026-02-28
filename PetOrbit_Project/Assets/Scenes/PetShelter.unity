@@ -404,6 +404,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Crate
   light: {fileID: 320214093}
   petInCrate: {fileID: 0}
+  petSpawnPoint: {fileID: 0}
 --- !u!1 &105788484
 GameObject:
   m_ObjectHideFlags: 0
@@ -1772,6 +1773,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Crate
   light: {fileID: 529220295}
   petInCrate: {fileID: 0}
+  petSpawnPoint: {fileID: 0}
 --- !u!1 &718326123
 GameObject:
   m_ObjectHideFlags: 0
@@ -2379,6 +2381,64 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Crate
   light: {fileID: 42970521}
   petInCrate: {fileID: 0}
+  petSpawnPoint: {fileID: 0}
+--- !u!1001 &1200777975
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 352043626490797378, guid: 1252d0f06f7b95a43911c31c61f9fa3d, type: 3}
+      propertyPath: m_Name
+      value: P_Pet
+      objectReference: {fileID: 0}
+    - target: {fileID: 823182845884871843, guid: 1252d0f06f7b95a43911c31c61f9fa3d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.1123369
+      objectReference: {fileID: 0}
+    - target: {fileID: 823182845884871843, guid: 1252d0f06f7b95a43911c31c61f9fa3d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.74516
+      objectReference: {fileID: 0}
+    - target: {fileID: 823182845884871843, guid: 1252d0f06f7b95a43911c31c61f9fa3d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.2725747
+      objectReference: {fileID: 0}
+    - target: {fileID: 823182845884871843, guid: 1252d0f06f7b95a43911c31c61f9fa3d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 823182845884871843, guid: 1252d0f06f7b95a43911c31c61f9fa3d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 823182845884871843, guid: 1252d0f06f7b95a43911c31c61f9fa3d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 823182845884871843, guid: 1252d0f06f7b95a43911c31c61f9fa3d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 823182845884871843, guid: 1252d0f06f7b95a43911c31c61f9fa3d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 823182845884871843, guid: 1252d0f06f7b95a43911c31c61f9fa3d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 823182845884871843, guid: 1252d0f06f7b95a43911c31c61f9fa3d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1252d0f06f7b95a43911c31c61f9fa3d, type: 3}
 --- !u!1 &1201337191
 GameObject:
   m_ObjectHideFlags: 0
@@ -2425,6 +2485,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Crate
   light: {fileID: 2054291099}
   petInCrate: {fileID: 0}
+  petSpawnPoint: {fileID: 0}
 --- !u!1 &1261146199
 GameObject:
   m_ObjectHideFlags: 0
@@ -2459,17 +2520,6 @@ Transform:
   - {fileID: 517119741}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1293671328 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6072339335523889374, guid: f9c43539fb9c1914f875f34f5ffcc682, type: 3}
-  m_PrefabInstance: {fileID: 163819682133174761}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5cbaed52d5c689f48b240bba74a1ac03, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
 --- !u!1 &1405108181
 GameObject:
   m_ObjectHideFlags: 0
@@ -2516,6 +2566,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Crate
   light: {fileID: 185873911}
   petInCrate: {fileID: 0}
+  petSpawnPoint: {fileID: 0}
 --- !u!1 &1455026203
 GameObject:
   m_ObjectHideFlags: 0
@@ -2562,6 +2613,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Crate
   light: {fileID: 2013480377}
   petInCrate: {fileID: 0}
+  petSpawnPoint: {fileID: 0}
 --- !u!1 &1508496995
 GameObject:
   m_ObjectHideFlags: 0
@@ -4053,91 +4105,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 480febdeabde5c246b42212085991ccf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
---- !u!1001 &163819682133174761
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 22150770242985795, guid: f9c43539fb9c1914f875f34f5ffcc682, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 22150770242985795, guid: f9c43539fb9c1914f875f34f5ffcc682, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 22150770242985795, guid: f9c43539fb9c1914f875f34f5ffcc682, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 22150770242985795, guid: f9c43539fb9c1914f875f34f5ffcc682, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 22150770242985795, guid: f9c43539fb9c1914f875f34f5ffcc682, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 22150770242985795, guid: f9c43539fb9c1914f875f34f5ffcc682, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 22150770242985795, guid: f9c43539fb9c1914f875f34f5ffcc682, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 22150770242985795, guid: f9c43539fb9c1914f875f34f5ffcc682, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 22150770242985795, guid: f9c43539fb9c1914f875f34f5ffcc682, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 22150770242985795, guid: f9c43539fb9c1914f875f34f5ffcc682, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6072339335523889374, guid: f9c43539fb9c1914f875f34f5ffcc682, type: 3}
-      propertyPath: currentCrate
-      value: 
-      objectReference: {fileID: 711078798}
-    - target: {fileID: 6072339335523889374, guid: f9c43539fb9c1914f875f34f5ffcc682, type: 3}
-      propertyPath: 'allCrates.Array.data[0]'
-      value: 
-      objectReference: {fileID: 1455026205}
-    - target: {fileID: 6072339335523889374, guid: f9c43539fb9c1914f875f34f5ffcc682, type: 3}
-      propertyPath: 'allCrates.Array.data[1]'
-      value: 
-      objectReference: {fileID: 711078798}
-    - target: {fileID: 6072339335523889374, guid: f9c43539fb9c1914f875f34f5ffcc682, type: 3}
-      propertyPath: 'allCrates.Array.data[2]'
-      value: 
-      objectReference: {fileID: 1201337193}
-    - target: {fileID: 6072339335523889374, guid: f9c43539fb9c1914f875f34f5ffcc682, type: 3}
-      propertyPath: 'allCrates.Array.data[3]'
-      value: 
-      objectReference: {fileID: 1405108183}
-    - target: {fileID: 6072339335523889374, guid: f9c43539fb9c1914f875f34f5ffcc682, type: 3}
-      propertyPath: 'allCrates.Array.data[4]'
-      value: 
-      objectReference: {fileID: 100921535}
-    - target: {fileID: 6072339335523889374, guid: f9c43539fb9c1914f875f34f5ffcc682, type: 3}
-      propertyPath: 'allCrates.Array.data[5]'
-      value: 
-      objectReference: {fileID: 1169443264}
-    - target: {fileID: 7558560576812870263, guid: f9c43539fb9c1914f875f34f5ffcc682, type: 3}
-      propertyPath: m_Name
-      value: CrateManager
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: f9c43539fb9c1914f875f34f5ffcc682, type: 3}
 --- !u!1001 &252896216844651136
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4153,7 +4120,7 @@ PrefabInstance:
     - target: {fileID: 738946752801112994, guid: 176a0e10eba465d45be2e1331bdf73d2, type: 3}
       propertyPath: cManager
       value: 
-      objectReference: {fileID: 1293671328}
+      objectReference: {fileID: 0}
     - target: {fileID: 738946752801112994, guid: 176a0e10eba465d45be2e1331bdf73d2, type: 3}
       propertyPath: cratePositions.Array.data[0].TrackingTarget
       value: 
@@ -4342,7 +4309,7 @@ PrefabInstance:
     - target: {fileID: 3439231732865665464, guid: 0b556b627d0951241a46df4ccbbb034a, type: 3}
       propertyPath: _crateManager
       value: 
-      objectReference: {fileID: 1293671328}
+      objectReference: {fileID: 0}
     - target: {fileID: 3439231732865665464, guid: 0b556b627d0951241a46df4ccbbb034a, type: 3}
       propertyPath: crates.Array.size
       value: 6
@@ -4376,6 +4343,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3439231732865665464, guid: 0b556b627d0951241a46df4ccbbb034a, type: 3}
+      propertyPath: possiblePets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3439231732865665464, guid: 0b556b627d0951241a46df4ccbbb034a, type: 3}
       propertyPath: 'possiblePet.Array.data[2]'
       value: 
       objectReference: {fileID: 11400000, guid: 579e8250b6b716847b8df3f900df1365, type: 2}
@@ -4383,6 +4354,18 @@ PrefabInstance:
       propertyPath: spawnPositions.Array.size
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3439231732865665464, guid: 0b556b627d0951241a46df4ccbbb034a, type: 3}
+      propertyPath: 'possiblePets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 579e8250b6b716847b8df3f900df1365, type: 2}
+    - target: {fileID: 3439231732865665464, guid: 0b556b627d0951241a46df4ccbbb034a, type: 3}
+      propertyPath: 'possiblePets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: fb103c200aad9bf4cac2c3b5c1cfd3b3, type: 2}
+    - target: {fileID: 3439231732865665464, guid: 0b556b627d0951241a46df4ccbbb034a, type: 3}
+      propertyPath: 'possiblePets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 6fc139d33ceb89d4b8c1bbb132a5c3dd, type: 2}
     - target: {fileID: 3439231732865665464, guid: 0b556b627d0951241a46df4ccbbb034a, type: 3}
       propertyPath: possibleColorCombos.Array.size
       value: 28
@@ -4542,7 +4525,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 1261146200}
   - {fileID: 1144461534}
-  - {fileID: 163819682133174761}
   - {fileID: 1319746137933628045}
   - {fileID: 284943830}
   - {fileID: 1916625612}
+  - {fileID: 1200777975}
