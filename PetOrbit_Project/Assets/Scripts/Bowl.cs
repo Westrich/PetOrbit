@@ -13,17 +13,17 @@ public class Bowl : Consumable
    protected override void ResetItem()
    {
       amountLeft = 100;
-      Vector3 position = bowlContents.transform.position;
+      Vector3 position = bowlContents.transform.localPosition;
       position.y = MinMaxPosition.y;
-      bowlContents.transform.position = position;
+      bowlContents.transform.localPosition = position;
       base.ResetItem();
    }
 
    protected override void AdjustVisuals()
    {
-      Vector3 position = bowlContents.transform.position;
+      Vector3 position = bowlContents.transform.localPosition;
       position.y =Mathf.Lerp(MinMaxPosition.x, MinMaxPosition.y, (amountLeft/100f));
-      bowlContents.transform.position = position;
+      bowlContents.transform.localPosition = position;
       base.AdjustVisuals();
       
    }

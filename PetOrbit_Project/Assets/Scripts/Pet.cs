@@ -3,14 +3,35 @@ using UnityEngine;
 
 public class Pet : MonoBehaviour
 {
+    //Spawn data
     private PetData _petData;
     private GameObject _petBody;
     public PetData PetData => _petData;
     public PetData defaultPetData;
+    
+    // Pets Needs
+    public float hunger = 0f;
+    public float thirst = 0f;
+    public float sleepiness = 0f;
 
     private void Start()
     {
         if(_petData == null) CreatePet(defaultPetData);
+    }
+
+    private void Eat()
+    {
+        hunger = 0f;
+    }
+
+    private void Drink()
+    {
+        thirst = 0f;
+    }
+
+    private void Sleep()
+    {
+        sleepiness = 0f;
     }
 
     public void CreatePet(PetData petData)

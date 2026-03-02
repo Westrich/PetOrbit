@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Dev_Notes
   m_EditorClassIdentifier: Assembly-CSharp::Notes_SO
   devNotes:
+  - think of system to handle pet needs, is everythign in one state machine? is it
+    a layered one? how do i handle sleepiness hunger thirst and cleanlyness
   - I dont know yet if the player should walk around in the game or not, or if they
     should even have a character.
   - For the spawning in adoption center, make a list of positions the pets get spawned
