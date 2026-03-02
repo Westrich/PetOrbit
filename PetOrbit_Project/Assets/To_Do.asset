@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: To_Do
   m_EditorClassIdentifier: Assembly-CSharp::Notes_SO
   devNotes:
+  - Safe Selected Pet
+  - hunger and thirst logic
   - UI to ask confirmation of coice
   - Give Pet a name
-  - Safe Selected Pet
+  - Idle patrol route
   - Second Home Scene, Which spawns the safed Pet
   - 'Light Stronger When Crate is selected  [DONE]'
   - 'Rycast Hit Pet [DONE]'
