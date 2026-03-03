@@ -90,6 +90,8 @@ public abstract class StateMachine<EState> : MonoBehaviour where EState : Enum
         CurrentState.OnTriggerExit(other);
     }
 
+    protected abstract void InitializeStates();
+
     private void OnCollisionEnter(Collision other)
     {
         

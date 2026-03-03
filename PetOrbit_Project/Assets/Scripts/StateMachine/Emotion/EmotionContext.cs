@@ -21,10 +21,12 @@ public class EmotionContext : MonoBehaviour
   #endregion
 
   public GameObject testObject;
+  public Pet _pet;
 
-  public EmotionContext(GameObject obj)
+  public EmotionContext Create(Pet pet)
   {
-      testObject = obj;
+      _pet = pet;
+      return this;
   }
   
   //Nothing is in here yet because i have no logic yet in my game but a rough example is here aswell

@@ -13,7 +13,7 @@ GameObject:
   m_Layer: 0
   m_Name: CrateManager
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 2800000, guid: fa5eb0c1ac10af644934915b525c1e5f, type: 3}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1

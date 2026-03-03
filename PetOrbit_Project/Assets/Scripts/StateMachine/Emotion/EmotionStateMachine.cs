@@ -10,11 +10,11 @@ public class EmotionStateMachine : StateMachine<EmotionStateMachine.EEmotionStat
       Sad,
    }
    private EmotionContext _context;
-   public GameObject myobject;
+   private Pet _pet;
 
    private void Awake()
    {
-      _context = new EmotionContext(myobject);
+      _context = gameObject.GetComponent<EmotionContext>().Create(_pet); 
       InitializeStates();
    }
 
@@ -35,7 +35,7 @@ public class EmotionStateMachine : StateMachine<EmotionStateMachine.EEmotionStat
       }
    }
    
-   private void InitializeStates()
+   protected override void InitializeStates()
    {
       //Add states to inherited StateMachine "States" dictionary and Set Initial State
       States.Add(EEmotionState.Happy, new HappyState(_context,EEmotionState.Happy));
