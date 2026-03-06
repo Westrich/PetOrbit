@@ -1,16 +1,9 @@
 using UnityEngine;
+using UnityEngine.AI;
 
 public class MovementContext : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   private Pet _pet;
+   private NavMeshAgent _agent;
+   private PetController _petController;
 }

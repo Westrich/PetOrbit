@@ -64,7 +64,7 @@ public abstract class StateMachine<EState> : MonoBehaviour where EState : Enum
         nextStateID = stateID;
         if (nextStateID.Equals(CurrentState.StateID)) return;
         isTransitioningState = true;
-        //Debug.Log("transitioning state to " + stateID);
+        Debug.Log("transitioning state to " + stateID);
         CurrentState.ExitState();
         CurrentState = States[stateID];
         CurrentState.EnterState();
@@ -73,7 +73,7 @@ public abstract class StateMachine<EState> : MonoBehaviour where EState : Enum
 
     protected virtual void OnUpdate()
     {
-        Debug.Log("CallingfakeUpdtae");
+        
     }
     private void OnTriggerEnter(Collider other)
     {

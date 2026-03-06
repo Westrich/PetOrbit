@@ -1,48 +1,50 @@
 using System;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Pet : MonoBehaviour
 {
     //Spawn data
     private PetData _petData;
-    private GameObject _petBody;
-    public PetData PetData => _petData;
     public PetData defaultPetData;
+    public PetData PetData => _petData;
+    private GameObject _petBody;
     
-    // Pets Needs
-    public float hunger = 0f;
-    public float thirst = 0f;
-    public float sleepiness = 0f;
+    // Movement
+    private PetController _controller;
+    public PetController Controller => _controller;
+    
+    // Feelings of Pet
+    private Condition _condition = new Condition();
+    public Condition Condition => _condition;
+
+    // Colors
+    private static readonly int ColorA = Shader.PropertyToID("_Color_A");
+    private static readonly int ColorB = Shader.PropertyToID("_Color_B");
+
 
     private void Start()
     {
         if(_petData == null) CreatePet(defaultPetData);
+        _controller = GetComponent<PetController>();
     }
 
-    private void Eat()
-    {
-        hunger = 0f;
-    }
+   
 
-    private void Drink()
-    {
-        thirst = 0f;
-    }
-
-    private void Sleep()
-    {
-        sleepiness = 0f;
-    }
-
+    // Constructor
+    
     public void CreatePet(PetData petData)
     {
         _petData = petData;
+        defaultPetData = _petData ;
         CreateBody();
     }
-
+    
+    // Instantiate body prefab of pets species
+    
     private void CreateBody()
     {
-        Debug.Log(_petData.SpeciesSo.modelPrefab.name);
+        
         var body = Instantiate(_petData.SpeciesSo.modelPrefab, transform);
         _petBody = body;
         
@@ -50,20 +52,110 @@ public class Pet : MonoBehaviour
 
         foreach (var rend in renderers)
         {
-            rend.material.SetColor("_Color_A", _petData.GetColor("colorA"));
-            rend.material.SetColor("_Color_B",_petData.GetColor("colorB"));
+            rend.material.SetColor(ColorA, _petData.GetColor("colorA"));
+            rend.material.SetColor(ColorB,_petData.GetColor("colorB"));
         }
     }
 
+    // Returns Pet Material
+    
     public Material GetMaterial()
     {
         Material material = _petBody.GetComponentInChildren<MeshRenderer>().sharedMaterial;
         var mat = new Material(material);
         return mat;
     }
+    
+    // Returns the prefab Species Model of the pet data
+    
     public GameObject GetModel()
     {
         return _petData.SpeciesSo.modelPrefab;
     }
 
+    public Vector3 GetPosition()
+    {
+        return transform.position;
+    }
+    public void AssignColors(Color a, Color b)
+    {
+        _petData.SetColor("colorA",a);
+        _petData.SetColor("colorB",b);
+    }
+
 }
+
+
+
+public class Condition
+{
+    public float Hunger ;
+    public float Thirst ;
+    public float Sleepiness ;
+    public float Rest;
+    
+    public Condition(float hunger, float thirst, float sleepiness,float rest)
+    {
+        Hunger = hunger;
+        Thirst = thirst;
+        Sleepiness = sleepiness;
+        Rest = rest;
+    }
+    
+    public Condition()
+    {
+        Hunger = 0;
+        Thirst = 0;
+        Sleepiness = 0;
+        Rest = 10;
+    }
+
+    
+    
+    public void ResetCondition()
+    {
+        Hunger = 0;
+        Thirst = 0;
+        Sleepiness = 0;
+    }
+
+    public void BadCondition()
+    {
+        Hunger = 100;
+        Thirst = 100;
+        Sleepiness = 100;
+    }
+
+    public void Eat(float amount)
+    {
+        Hunger -= amount;
+    }
+
+    public void Drink(float amount)
+    {
+        Thirst -= amount;
+    }
+
+    public void Sleep(float amount)
+    {
+        Sleepiness -= amount;
+    }
+
+    public void GetHungry(float amount)
+    {
+        Hunger += amount;
+    }
+
+    public void GetThirsty(float amount)
+    {
+        Thirst += amount;
+    }
+
+    public void Fatigue(float amount)
+    {
+        Sleepiness += amount;
+    }
+
+}
+
+

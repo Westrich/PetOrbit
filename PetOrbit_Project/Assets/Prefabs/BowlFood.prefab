@@ -11,7 +11,7 @@ PrefabInstance:
     - target: {fileID: 939022586074399670, guid: 0922ced3e009f434faf68c4032d24b66, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: c0ded5b4a2855754f8795f0fb1ad3a0c, type: 2}
+      objectReference: {fileID: 2100000, guid: bcbf4174b18ee7e4582f8ab9e27d154f, type: 2}
     - target: {fileID: 6317271089506417571, guid: 0922ced3e009f434faf68c4032d24b66, type: 3}
       propertyPath: m_Name
       value: BowlFood
@@ -34,15 +34,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8282912504168174587, guid: 0922ced3e009f434faf68c4032d24b66, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.044276617
       objectReference: {fileID: 0}
     - target: {fileID: 8282912504168174587, guid: 0922ced3e009f434faf68c4032d24b66, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.033
       objectReference: {fileID: 0}
     - target: {fileID: 8282912504168174587, guid: 0922ced3e009f434faf68c4032d24b66, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.28175813
       objectReference: {fileID: 0}
     - target: {fileID: 8282912504168174587, guid: 0922ced3e009f434faf68c4032d24b66, type: 3}
       propertyPath: m_LocalRotation.w

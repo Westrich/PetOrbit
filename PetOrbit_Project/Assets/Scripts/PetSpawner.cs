@@ -12,47 +12,51 @@ public class PetSpawner : MonoBehaviour
     
     public List<Crate> crates;
     [SerializeField] private List<PetData> possiblePets = new List<PetData>();
-    [SerializeField] private List<ColorData> possibleColorCombos = new List<ColorData>();
-    [SerializeField] private ColorList colorList;
     [SerializeField] private GameObject petPrefab;
-    public GameObject PetPrefab => petPrefab;
-    /*[SerializeField] private GameObject petPrefab;
-    [SerializeField] private List<Pet> generatedPets = new List<Pet>();
-    [SerializeField] private Pet latestPet;
+    [SerializeField] private ColorList colorList;
+    [SerializeField] private List<ColorData> possibleColorCombos = new List<ColorData>();
     [SerializeField] private ColorData currentColor;
-    [SerializeField] private List<Vector3> spawnPositions = new List<Vector3>();
-    [SerializeField] private List<Crate> crates;
-    [SerializeField] private bool maxPetsSpawned= false;
-    [SerializeField] private CrateManager _crateManager;
-    public int spawnamount = 1;*/
-    
+    public GameObject PetPrefab => petPrefab;
+    // Create Singleton
     public static PetSpawner Instance {get; private set;}
 
-    // Create Singleton
     private void Awake()
     {
         if(Instance != null) Destroy(gameObject);
         else Instance = this;
+        AssignCrates();
     }
 
     private void OnValidate()
     {
+        // Copy over the color combos from Color list
         if (possibleColorCombos.Count==0&&colorList)
         {
-            foreach (var colorData in colorList.colorLists)
-            {
-                possibleColorCombos.Add(colorData);
-            }
+            CopyColorCombos();
         }
     }
 
+    private void CopyColorCombos()
+    {
+        // Copy over the color combos from Color list
+        foreach (var combo in colorList.colorLists)
+        {
+            possibleColorCombos.Add(combo);
+        }
+    }
     private void AssignCrates()
     {
         var randomPet =  Random.Range(0, possiblePets.Count);
+       
+       
         foreach (var crate in crates)
         {
-            crate.SetPet(possiblePets[randomPet]);
-            var previousPet = randomPet;
+            PickColor();
+            var petdata = Instantiate(possiblePets[randomPet]);
+            petdata.SetColor("colorA",currentColor.GetColor(1));
+            petdata.SetColor("colorB",currentColor.GetColor(0));
+            crate.SetPet(petdata);
+             var previousPet = randomPet;
             // Making sure it is never the same species twice
             while (previousPet == randomPet)
             {
@@ -66,20 +70,7 @@ public class PetSpawner : MonoBehaviour
         AssignCrates();
     }
 
-    /*
-    private void SetColor()
-    {
-        MeshRenderer[] renderers = latestPet.GetComponentsInChildren<MeshRenderer>();
-
-
-        foreach (var rend in renderers)
-        {
-            latestPet.petData.SetColor("colorA",currentColor.GetColor(1));
-            latestPet.petData.SetColor("colorB",currentColor.GetColor(0));
-            rend.material.SetColor("_Color_A", latestPet.petData.GetColor("colorA"));
-            rend.material.SetColor("_Color_B",latestPet.petData.GetColor("colorB"));
-        }
-    }
+    
 
     private void PickColor()
     {
@@ -92,5 +83,5 @@ public class PetSpawner : MonoBehaviour
 
   
 
-    }*/
+    
 }

@@ -14,7 +14,7 @@ public class EmotionStateMachine : StateMachine<EmotionStateMachine.EEmotionStat
 
    private void Awake()
    {
-      _context = gameObject.GetComponent<EmotionContext>().Create(_pet); 
+      _context = gameObject.GetComponent<EmotionContext>(); 
       InitializeStates();
    }
 

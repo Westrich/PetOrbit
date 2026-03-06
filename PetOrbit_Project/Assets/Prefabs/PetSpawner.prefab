@@ -44,9 +44,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bb23068ebf0e8d4bbf53277021e9506, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PetSpawner
-  possiblePet:
-  - {fileID: 11400000, guid: 6fc139d33ceb89d4b8c1bbb132a5c3dd, type: 2}
+  crates: []
+  possiblePets:
+  - {fileID: 11400000, guid: 579e8250b6b716847b8df3f900df1365, type: 2}
   - {fileID: 11400000, guid: fb103c200aad9bf4cac2c3b5c1cfd3b3, type: 2}
+  - {fileID: 11400000, guid: 6fc139d33ceb89d4b8c1bbb132a5c3dd, type: 2}
+  petPrefab: {fileID: 352043626490797378, guid: 1252d0f06f7b95a43911c31c61f9fa3d, type: 3}
+  colorList: {fileID: 11400000, guid: cd57cba6fbfbb8a4b81d7af99dcf40de, type: 2}
   possibleColorCombos:
   - {fileID: 11400000, guid: b9dedace92c4c024eba2471583b67e2f, type: 2}
   - {fileID: 11400000, guid: cf0cd7af82c746344a201a65e0305b9e, type: 2}
@@ -76,13 +80,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 48681ad833a608d4aacd69aacaa5ccd9, type: 2}
   - {fileID: 11400000, guid: 04092e7b9d5d9ef4fbee08bac823d513, type: 2}
   - {fileID: 11400000, guid: 6bed4c4c70d387b4e9a043ff920387f3, type: 2}
-  colorList: {fileID: 11400000, guid: cd57cba6fbfbb8a4b81d7af99dcf40de, type: 2}
-  petPrefab: {fileID: 352043626490797378, guid: 1252d0f06f7b95a43911c31c61f9fa3d, type: 3}
-  generatedPets: []
-  latestPet: {fileID: 0}
   currentColor: {fileID: 0}
-  spawnPositions: []
-  crates: []
-  maxPetsSpawned: 0
-  _crateManager: {fileID: 0}
-  spawnamount: 1

@@ -1,11 +1,11 @@
 using UnityEditor.Timeline;
 using UnityEngine;
 
-public class FetchingState : MovementState
+public class FetchingState : PetState
 {
-    public FetchingState(MovementContext context, MovementMachine.EMoveState stateID) : base(context, stateID)
+    public FetchingState(PetController petController, PetStateMachine.EPetState stateID) : base(petController, stateID)
     {
-        Context = context;
+        PetController = petController;
     }
 
     #region MustImpliment
@@ -17,32 +17,32 @@ public class FetchingState : MovementState
 
         public override void UpdateState()
         {
-            throw new System.NotImplementedException();
+             
         }
 
         public override void ExitState()
         {
-            throw new System.NotImplementedException();
+           
         }
 
-        public override MovementMachine.EMoveState GetNextState()
+        public override PetStateMachine.EPetState GetNextState()
         {
-            throw new System.NotImplementedException();
+            return StateID;
         }
 
         public override void OnTriggerEnter(Collider other)
         {
-            throw new System.NotImplementedException();
+            
         }
 
         public override void OnTriggerStay(Collider other)
         {
-            throw new System.NotImplementedException();
+           
         }
 
         public override void OnTriggerExit(Collider other)
         {
-            throw new System.NotImplementedException();
+            
         }
     #endregion
 }

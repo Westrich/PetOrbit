@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 203219579}
   - component: {fileID: 203219583}
   - component: {fileID: 203219584}
+  - component: {fileID: 203219585}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -244,7 +245,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2b62206984344e40aa8d7160bfb1022, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EmotionStateMachine
-  myobject: {fileID: 203219578}
 --- !u!114 &203219584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -261,6 +261,20 @@ MonoBehaviour:
   - {fileID: 2100000, guid: f6d52d4abad27944cbde5662e8f8daf6, type: 2}
   - {fileID: 2100000, guid: ba0dd4d4ba433cd4eb142740e33abef9, type: 2}
   - {fileID: 2100000, guid: f454be3bef795334c89ce8b625bd53c5, type: 2}
+--- !u!114 &203219585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 203219578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5045613d7ccd8694bbed1f2eef9712f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EmotionContext
+  testObject: {fileID: 203219578}
+  _pet: {fileID: 0}
 --- !u!1 &828933818
 GameObject:
   m_ObjectHideFlags: 0
