@@ -15,7 +15,7 @@ public class Pet : MonoBehaviour
     public PetController Controller => _controller;
     
     // Feelings of Pet
-    private Condition _condition = new Condition();
+    public Condition _condition = new Condition(0,0,0,0);
     public Condition Condition => _condition;
 
     // Colors
@@ -27,6 +27,9 @@ public class Pet : MonoBehaviour
     {
         if(_petData == null) CreatePet(defaultPetData);
         _controller = GetComponent<PetController>();
+        _condition.ResetCondition();
+        _condition.Exhaustion.SetReplenishRate(20);
+        _condition.Exhaustion.SetDepletionRate(20);
     }
 
    
@@ -87,75 +90,5 @@ public class Pet : MonoBehaviour
 
 
 
-public class Condition
-{
-    public float Hunger ;
-    public float Thirst ;
-    public float Sleepiness ;
-    public float Rest;
-    
-    public Condition(float hunger, float thirst, float sleepiness,float rest)
-    {
-        Hunger = hunger;
-        Thirst = thirst;
-        Sleepiness = sleepiness;
-        Rest = rest;
-    }
-    
-    public Condition()
-    {
-        Hunger = 0;
-        Thirst = 0;
-        Sleepiness = 0;
-        Rest = 10;
-    }
-
-    
-    
-    public void ResetCondition()
-    {
-        Hunger = 0;
-        Thirst = 0;
-        Sleepiness = 0;
-    }
-
-    public void BadCondition()
-    {
-        Hunger = 100;
-        Thirst = 100;
-        Sleepiness = 100;
-    }
-
-    public void Eat(float amount)
-    {
-        Hunger -= amount;
-    }
-
-    public void Drink(float amount)
-    {
-        Thirst -= amount;
-    }
-
-    public void Sleep(float amount)
-    {
-        Sleepiness -= amount;
-    }
-
-    public void GetHungry(float amount)
-    {
-        Hunger += amount;
-    }
-
-    public void GetThirsty(float amount)
-    {
-        Thirst += amount;
-    }
-
-    public void Fatigue(float amount)
-    {
-        Sleepiness += amount;
-    }
-
-}
 
 

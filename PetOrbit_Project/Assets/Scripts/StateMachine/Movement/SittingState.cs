@@ -1,3 +1,4 @@
+using System;
 using UnityEditor.Timeline;
 using UnityEngine;
 
@@ -6,9 +7,13 @@ public class SittingState : PetState
     public SittingState(PetController petController, PetStateMachine.EPetState stateID) : base(petController, stateID)
     {
         PetController = petController;
+        
+        
     }
 
     private bool _rested = false;
+    private Stat _exhaustion => PetController.Pet.Condition.Exhaustion;
+    private PetStateMachine.EPetState NextState;
 
     #region MustImpliment
 
@@ -16,14 +21,25 @@ public class SittingState : PetState
         {
             Debug.Log("Enter Sitting State");
             PetController.Agent.destination = PetController.Pet.GetPosition();
+           // PetController.Brain.statsToDeplete.Add(_exhaustion);
+            PetController.Brain.StatCleared = new Action<string>(Rested);
+            NextState = StateID;
+        }
+
+        private void Rested(string statName)
+        {
+            if (statName == _exhaustion.GetName())
+            {
+                Debug.Log("rested");
+                _rested = true;
+                NextState = PetController.Brain._states[PetStateMachine.EPetState.Roaming].StateID;;
+                PetController.Brain.TransitionToState(PetController.Brain._states[PetStateMachine.EPetState.Roaming].StateID);
+            }
         }
 
         public override void UpdateState()
         {
-            while (PetController.Pet.Condition.Rest<10)
-            {
-                Rest();
-            }
+           
         }
 
         public override void ExitState()
@@ -34,7 +50,7 @@ public class SittingState : PetState
         public override PetStateMachine.EPetState GetNextState()
         {
            // if (_rested) return PetStateMachine.EPetState.Roaming;
-            return StateID;
+            return NextState;
 
         }
 
@@ -54,19 +70,5 @@ public class SittingState : PetState
         }
     #endregion
 
-    private void Rest()
-    {
-        if (PetController.Pet.Condition.Rest < 10)
-        {
-            _rested = false;
-        }
-        else
-        {
-            _rested = true;
-            return;
-        }
-        
-        PetController.Pet.Condition.Rest += 1*Time.deltaTime;
-        
-    }
+    
 }

@@ -11,6 +11,7 @@ public abstract class StateMachine<EState> : MonoBehaviour where EState : Enum
     protected BaseState<EState> CurrentState;
 
     protected EState nextStateID;
+    
 
     protected bool isTransitioningState = false;
     void Awake()
@@ -61,6 +62,7 @@ public abstract class StateMachine<EState> : MonoBehaviour where EState : Enum
 
     public void TransitionToState(EState stateID)
     {
+        OnTransition();
         nextStateID = stateID;
         if (nextStateID.Equals(CurrentState.StateID)) return;
         isTransitioningState = true;
@@ -70,6 +72,8 @@ public abstract class StateMachine<EState> : MonoBehaviour where EState : Enum
         CurrentState.EnterState();
         isTransitioningState = false;
     }
+    
+    protected virtual void OnTransition(){}
 
     protected virtual void OnUpdate()
     {

@@ -14,26 +14,38 @@ public class RoamingState : PetState
     public RoamingState(PetController petController, PetStateMachine.EPetState stateID) : base(petController, stateID)
     {
         PetController = petController;
+        
     }
 
     public GameObject visualiserFor;
     public GameObject visualisergoal;
     public UnityAction myAction;
-    private float distance;
+    private float distance => PetController.RoamingDistance;
     private float _timer = 0f;
-    private float _intervall = 1f;
+    private float _intervall => PetController.PosIntervall;
     private bool _timerRunning = false;
-    private List<Vector3> _roamingPositions;
+    private float turnamount = 2;
+    private float strength => PetController.AnchorStrength;
+    private PetStateMachine.EPetState NextState;
+    
+    private Condition cond => PetController.Pet.Condition;
+    private Stat _exhaustion => PetController.Pet.Condition.Exhaustion;
+    
 
 
 
-    public override void EnterState()
-    {
-        visualisergoal = PetController.a;
-        visualiserFor = PetController.b;
-            distance = PetController.RoamingDistance;
+        public override void EnterState()
+        {
+            NextState = StateID;
+            
+            _exhaustion.SetReplenishRate(200f);
+            _exhaustion.SetDepletionRate(200f);
+            PetController.Brain.statsToIncrease.Add(_exhaustion);
             myAction += NewTarget;
+            PetController.Brain.StatFull = new Action<string>(StatFilled);
+            PetController.Brain.StatCleared =new Action<string>(StatCleared);
             _timer = 0.1f;
+           
             //_timerRunning = true;
             Debug.Log("Entering Roaming State");
         }
@@ -42,8 +54,8 @@ public class RoamingState : PetState
         {
             if (!_timerRunning)
             {
-                Debug.Log("timer started");
-                _timer = _intervall;
+               // Debug.Log("timer started");
+                _timer = Random.Range(_intervall*0.8f,_intervall*1.2f);
             }
             ActionAfterTime(myAction);
         }
@@ -56,7 +68,7 @@ public class RoamingState : PetState
 
         public override PetStateMachine.EPetState GetNextState()
         {
-            return this.StateID;
+            return NextState;
         }
     #region NotImplimented
         public override void OnTriggerEnter(Collider other)
@@ -75,6 +87,25 @@ public class RoamingState : PetState
         }
     #endregion
 
+    public void StatCleared(string name)
+    {
+        Debug.Log("stat Cleared function");
+        if (name == _exhaustion.GetName())
+        {
+            NextState = PetController.Brain._states[PetStateMachine.EPetState.Roaming].StateID;
+            PetController.Brain.TransitionToState(PetController.Brain._states[PetStateMachine.EPetState.Roaming].StateID);
+        }
+    }
+    public void StatFilled(string name)
+    {
+        Debug.Log("stat Filled function");
+        if (name == _exhaustion.GetName())
+        {
+            NextState = PetController.Brain._states[PetStateMachine.EPetState.Sitting].StateID;
+            PetController.Brain.TransitionToState(PetController.Brain._states[PetStateMachine.EPetState.Sitting].StateID);
+        }
+    }
+
     public void ActionAfterTime(UnityAction action)
     {
     
@@ -83,12 +114,12 @@ public class RoamingState : PetState
             _timerRunning = true;
             _timer -= 1 * Time.deltaTime;
             
-            if(_timer%100 == 0 )Debug.Log(_timer);
+            
             
         }
         else
         {
-            Debug.Log("Timer Over");
+            //Debug.Log("Timer Over");
             _timerRunning = false;
             action.Invoke();
         }
@@ -97,23 +128,37 @@ public class RoamingState : PetState
     
     private void NewTarget()
     {
-        Debug.Log("getting new target");
-        PetController.Agent.destination = RandomPosition();
+        
+        PetController.Agent.destination = RandomPosition(PetController.AnchorPosition,distance);
+        
     }
     
-    
-    private Vector3 RandomPosition()
+    //get random position within a certain area
+    private Vector3 RandomPosition(Vector3 anchorPosition, float radius)
     {
-        var curPos = PetController.Pet.GetPosition();
-        var facing = PetController.Pet.transform.forward;
-        var lookDir = PetController.Pet.transform.forward.z;
-        visualiserFor.transform.position = new Vector3(curPos.x,curPos.y,facing.z);
-        Vector3 vec = new Vector3(Random.Range(-facing.x,facing.x),0,facing.z);
-        visualisergoal.transform.position = vec;
-        vec.Normalize();
+        var trans = PetController.Pet.transform;
         
-        Debug.Log(vec + "is the new target pos");
-        return vec;
+        var curPos = PetController.Pet.GetPosition();
+      
+        var facing = trans.forward *distance/2;
+        var sides = trans.right * Random.Range(-distance/2, distance/2);
+        var goal = curPos + facing + sides;
+        var mag = (anchorPosition - goal).magnitude/distance;
+        var anchor = (anchorPosition - goal);
+        
+        anchor = anchor.normalized;
+        
+        goal = (goal + anchor*(strength*mag));
+        
+        return goal;
+    }
+
+    
+    // check if something is within the range of something else
+    private bool WithinRadius(Vector3 checkPos, Vector3 newPos, float radius)
+    {
+        var dist = (newPos - checkPos).magnitude;
+        return dist <= radius;
     }
 
 }
